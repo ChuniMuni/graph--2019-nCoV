@@ -92,3 +92,21 @@ plt.ylabel('Доли умерших и выздоровевших заражен
 plt.xlabel('Дата')
 plt.legend()
 plt.show()
+
+# Анализ лайнера Diamond Princess
+diamond = data[data["Country/Region"] == "Others"]
+hubei = data[data["Province/State"] == "Hubei"]
+
+plt.plot(diamond["ObservationDate"],
+         diamond["Confirmed"]/3700,
+         label='Лайнер "Diamond Princess"')
+
+plt.plot(df_by_date["Date_date"],
+         df_by_date["Confirmed"]/58e6,
+         label="Провинция Хубэй")
+
+plt.yscale('log')
+plt.xlabel("Дата")
+plt.ylabel("Доля зараженных")
+plt.legend()
+plt.show()
