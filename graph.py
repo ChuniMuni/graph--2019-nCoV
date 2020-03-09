@@ -15,4 +15,17 @@ data.shape
 data.describe()
 
 # Проверка на дубликаты
-print(sum(data.duplicated(['Country/Region', 'Province/State', 'ObservationDate'])))
+# print(sum(data.duplicated(['Country/Region', 'Province/State', 'ObservationDate'])))
+
+data.loc[data['Country/Region'] == 'Mainland China', 'Country/Region'] = 'China'
+
+# Выводим общий список
+country_list = data['Country/Region'].unique()
+print('Коронавирус COVID19 обнаружен в {} странах:'.format(country_list.size))
+
+for country in sorted(country_list):
+    print('- {}'.format(country))
+
+# Анализ по отдельной стране
+var = data[data['Country/Region'] == 'Russia']
+print(var)
