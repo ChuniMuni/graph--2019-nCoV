@@ -61,3 +61,15 @@ plt.ylabel('Число случаев, тыс. человек')
 plt.xlabel('Дата')
 plt.legend()
 plt.show()
+
+# данные в полулогарифмическом масштабе
+plt.yscale('log')
+for label in d:
+    plt.plot(df_by_date["Date_date"],
+             df_by_date[label]/1000,
+             label = d[label])
+
+plt.ylabel('Число случаев, тыс. человек')
+plt.xlabel('Дата')
+plt.legend()
+plt.show()
