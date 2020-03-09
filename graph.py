@@ -10,4 +10,9 @@ data = pd.read_csv("covid_19_data.csv")
 data.shape
 
 # Sample data output
-print(data.head())
+# print(data.head())
+
+data.describe()
+
+# Проверка на дубликаты
+print(sum(data.duplicated(['Country/Region', 'Province/State', 'ObservationDate'])))
