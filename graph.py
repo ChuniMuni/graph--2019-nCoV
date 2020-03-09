@@ -48,3 +48,16 @@ plt.plot(df_by_date["Date_date"],
 plt.xlabel('Дата')
 plt.ylabel('Число подтвержденных случаев, тыс. чел.')
 plt.show()
+
+# Число умерших и выздоровевших
+d = {"Deaths":"Умерли", "Recovered":"Выздоровели"}
+
+for label in d:
+    plt.plot(df_by_date["Date_date"],
+             df_by_date[label]/1000,
+             label=d[label])
+
+plt.ylabel('Число случаев, тыс. человек')
+plt.xlabel('Дата')
+plt.legend()
+plt.show()
