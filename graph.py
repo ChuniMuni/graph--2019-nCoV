@@ -73,3 +73,11 @@ plt.ylabel('Число случаев, тыс. человек')
 plt.xlabel('Дата')
 plt.legend()
 plt.show()
+
+# Грубая оценка летальности
+plt.plot(df_by_date["Date_date"],
+         df_by_date['Deaths']/df_by_date['Confirmed']*100)
+
+plt.ylabel('Доля умерших среди зараженных, %')
+plt.xlabel('Дата')
+plt.show()
