@@ -81,3 +81,14 @@ plt.plot(df_by_date["Date_date"],
 plt.ylabel('Доля умерших среди зараженных, %')
 plt.xlabel('Дата')
 plt.show()
+
+# Сравнение динамики летальности с динамикой выздоровления
+for label in d:
+    plt.plot(df_by_date["Date_date"],
+             df_by_date[label]/df_by_date['Confirmed']*100,
+             label=d[label])
+
+plt.ylabel('Доли умерших и выздоровевших зараженных, %')
+plt.xlabel('Дата')
+plt.legend()
+plt.show()
